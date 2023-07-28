@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>LOVE</title>
+		<!-- <link rel="stylesheet" href="./t1.css" /> -->
+		<style>
+			* {
+				padding: 0;
+				margin: 0;
+			}
+
+			body {
+				background: black center center;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				height: 100vh;
+			}
+
+			ul {
+				position: relative;
+				display: flex;
+				height: 200px;
+				z-index: 10;
+			}
+
+			li {
+				width: 20px;
+				height: 20px;
+				border-radius: 10px;
+				margin: 0 10px;
+			}
+
+			li:nth-child(1) {
+				background: red;
+				color: transparent;
+				animation: love1 5s 0s infinite;
+				box-shadow: 0px 0px 20px 4px red;
+			}
+
+			li:nth-child(9) {
+				background: red;
+				color: transparent;
+				animation: love1 5s 1.6s infinite;
+				box-shadow: 0px 0px 20px 4px red;
+			}
+
+			li:nth-child(2) {
+				background: darkturquoise;
+				animation: love2 5s 0.2s infinite;
+				color: transparent;
+				box-shadow: 0px 0px 20px 4px darkturquoise;
+			}
+
+			li:nth-child(8) {
+				background: darkturquoise;
+				color: transparent;
+				animation: love2 5s 1.4s infinite;
+				box-shadow: 0px 0px 20px 4px darkturquoise;
+			}
+
+			li:nth-child(3) {
+				background: darksalmon;
+				animation: love3 5s 0.4s infinite;
+				color: transparent;
+				box-shadow: 0px 0px 20px 4px darksalmon;
+			}
+
+			li:nth-child(7) {
+				background: darksalmon;
+				color: transparent;
+				animation: love3 5s 1.2s infinite;
+				box-shadow: 0px 0px 20px 4px darksalmon;
+			}
+
+			li:nth-child(4) {
+				background: deeppink;
+				color: transparent;
+				animation: love4 5s 0.6s infinite;
+				box-shadow: 0px 0px 20px 4px deeppink;
+			}
+
+			li:nth-child(6) {
+				background: deeppink;
+				color: transparent;
+				animation: love4 5s 1s infinite;
+				box-shadow: 0px 0px 20px 4px deeppink;
+			}
+
+			li:nth-child(5) {
+				background: yellow;
+				color: transparent;
+				animation: love5 5s 0.8s infinite;
+				box-shadow: 0px 0px 20px 4px yellow;
+			}
+
+			@keyframes love1 {
+				30%,
+				50% {
+					height: 60px;
+					transform: translateY(-30px);
+				}
+
+				70%,
+				100% {
+					height: 20px;
+					transform: translateY(0);
+				}
+			}
+
+			@keyframes love2 {
+				30%,
+				50% {
+					height: 125px;
+					transform: translateY(-60px);
+				}
+
+				70%,
+				100% {
+					height: 20px;
+					transform: translateY(0);
+				}
+			}
+
+			@keyframes love3 {
+				30%,
+				50% {
+					height: 160px;
+					transform: translateY(-75px);
+				}
+
+				70%,
+				100% {
+					height: 20px;
+					transform: translateY(0);
+				}
+			}
+
+			@keyframes love4 {
+				30%,
+				50% {
+					height: 180px;
+					transform: translateY(-60px);
+				}
+
+				70%,
+				100% {
+					height: 20px;
+					transform: translateY(0);
+				}
+			}
+
+			@keyframes love5 {
+				30%,
+				50% {
+					height: 200px;
+					transform: translateY(-45px);
+				}
+
+				70%,
+				100% {
+					height: 20px;
+					transform: translateY(0);
+				}
+			}
+
+			.container {
+				position: absolute;
+				width: 100%;
+				height: 100vh;
+				overflow: hidden;
+			}
+
+			.bubbles {
+				position: relative;
+				display: flex;
+			}
+
+			.bubbles span {
+				position: relative;
+				width: 30px;
+				height: 30px;
+				border-radius: 50%;
+				margin: 0 4px;
+				background: darkturquoise;
+				box-shadow: 0 0 20px 2px darkturquoise;
+				animation: fly linear infinite;
+				animation-duration: calc(120s / var(--i));
+			}
+
+			.bubbles span:nth-child(even) {
+				background: red;
+				box-shadow: 0 0 20px 2px red;
+			}
+
+			@keyframes fly {
+				0% {
+					transform: translateY(100vh) scale(0);
+				}
+
+				100% {
+					transform: translateY(-10vh) scale(1);
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+		<div class="container">
+			<div class="bubbles">
+				<span style="--i: 24"></span>
+				<span style="--i: 12"></span>
+				<span style="--i: 15"></span>
+				<span style="--i: 30"></span>
+				<span style="--i: 26"></span>
+				<span style="--i: 17"></span>
+				<span style="--i: 9"></span>
+				<span style="--i: 19"></span>
+				<span style="--i: 28"></span>
+				<span style="--i: 22"></span>
+				<span style="--i: 13"></span>
+				<span style="--i: 11"></span>
+				<span style="--i: 24"></span>
+				<span style="--i: 24"></span>
+				<span style="--i: 12"></span>
+				<span style="--i: 15"></span>
+				<span style="--i: 30"></span>
+				<span style="--i: 26"></span>
+				<span style="--i: 17"></span>
+				<span style="--i: 9"></span>
+				<span style="--i: 19"></span>
+				<span style="--i: 28"></span>
+				<span style="--i: 22"></span>
+				<span style="--i: 13"></span>
+				<span style="--i: 11"></span>
+				<span style="--i: 24"></span>
+				<span style="--i: 24"></span>
+				<span style="--i: 12"></span>
+				<span style="--i: 15"></span>
+				<span style="--i: 30"></span>
+				<span style="--i: 26"></span>
+				<span style="--i: 17"></span>
+				<span style="--i: 9"></span>
+				<span style="--i: 19"></span>
+				<span style="--i: 28"></span>
+				<span style="--i: 22"></span>
+				<span style="--i: 13"></span>
+				<span style="--i: 11"></span>
+				<span style="--i: 24"></span>
+			</div>
+		</div>
+	</body>
+</html>
